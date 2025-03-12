@@ -30,6 +30,9 @@ class Taches(models.Model):
     project = models.ForeignKey(Project, related_name='notes', on_delete=models.CASCADE)
     owner = models.ForeignKey(User, related_name='notes', on_delete=models.CASCADE,default=get_default_user)
 
+    assigned_to = models.ForeignKey(User, related_name='assigned_tasks', on_delete=models.SET_NULL, null=True, blank=True)
+
+
     def __str__(self):
         return self.title
 
@@ -41,3 +44,13 @@ class Taches(models.Model):
                 slug = f'{slug_base}-{get_random_string(5)}'
             self.slug = slug
         super().save(*args, **kwargs)
+
+
+class Comment(models.Model):
+    task = models.ForeignKey(Taches, related_name="comments", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment by {self.user.username} on {self.task.title}"

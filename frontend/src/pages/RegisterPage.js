@@ -61,7 +61,7 @@ const RegisterPage = () => {
                 <label for="floatingInput">Email Address</label>
               </div>
               <div class="d-grid gap-2">
-              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-block mb-4 shadow">SIGN UP</button>
+              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-block mb-4 shadow d-flex justify-content-center align-items-center text-center">SIGN UP</button>
             </div>
                 
             </form>

@@ -28,7 +28,7 @@ const ProjectDetail = () => {
           <div className="note-content mt-4 mb-4">
               <p className="note-inner-content text-muted" data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.">{project.description}</p>
           </div>
-          <Link className='d-flex justify-content-center' to={`/projects/${id}/taches`}><button className="btn btn-primary btn-md " type="button">Voir les Sprintes</button></Link>
+          <Link className='d-flex justify-content-center' to={`/projects/${id}/taches`}><button className="btn btn-primary btn-md " type="button">Voir les Tâches</button></Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { MdOutlinePendingActions } from "react-icons/md";
 
 const DueTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -16,7 +17,7 @@ const DueTasks = () => {
 
     axios
       .get("http://127.0.0.1:8001/check_due_tasks/", {
-        headers: { Authorization: `Token ${token}` },
+        headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         if (response.data.tasks) {
@@ -32,9 +33,11 @@ const DueTasks = () => {
   }, []);
 
   return (
-    <div className="container mt-4 " >
-      <h3 className="mb-5 text-primary">📅 Tâches en attente (J-1)</h3>
-
+    <div className="container mt-4" >
+      <div className="d-flex mb-5">
+      <MdOutlinePendingActions style={{fontSize:"30px",color:"blue",marginRight:"8px"}}/>
+      <h3 className=" text-primary">Tâches en attente (J-1)</h3>
+    </div>
       {loading && (
         <div className="text-center">
           <div className="spinner-border text-primary" role="status">

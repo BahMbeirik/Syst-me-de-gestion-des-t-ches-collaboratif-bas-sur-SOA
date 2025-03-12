@@ -55,10 +55,10 @@ const Taches = () => {
   return (
     <div>
       <div className="d-flex justify-content-around m-4">
-        <h3>Sprints du <span className='Pname'>{projectName}</span></h3> 
+        <h3>Tâches du <span className='Pname'>{projectName}</span></h3> 
         <Link to={`/add-taches?project=${id}`} style={{ textDecoration: "none" }}>
               <button className="btn btn-primary btn-md" type="button">
-                <FaSquarePlus /> Ajouter une Sprint
+                <FaSquarePlus /> Ajouter une Tâche
               </button>
         </Link>
       </div>

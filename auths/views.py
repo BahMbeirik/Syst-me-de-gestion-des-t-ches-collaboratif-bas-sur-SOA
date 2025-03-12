@@ -11,6 +11,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import get_user_model
+from rest_framework import generics
+
+from auths.serializers import UserSerializer
 
 # Create your views here.
 class LoginSerializer(Serializer):
@@ -68,3 +71,8 @@ class CurrentUserView(APIView):
             "email": user.email,
             "is_staff": user.is_staff
         })
+
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

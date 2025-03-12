@@ -16,7 +16,7 @@ const LoginPage = () => {
           password: password
       }).then(response => {
           localStorage.setItem('token', response.data.token);  // تخزين التوكن
-          navigate('/', { replace: true });  // التوجيه إلى صفحة الحسابات
+          navigate('/projects', { replace: true });  
           toast.success("Authentication Successfuly!")
       }).catch(error => {
           console.log(error);
@@ -66,7 +66,7 @@ const LoginPage = () => {
           </div>
         </div>
         <div class="d-grid gap-2">
-          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 shadow">SIGN IN</button>
+          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 shadow d-flex justify-content-center align-items-center text-center">SIGN IN</button>
         </div>
       </form>
       </div>

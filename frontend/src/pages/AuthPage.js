@@ -13,23 +13,23 @@ const AuthPage = () => {
   return (
     <div className={`d-flex justify-content-center p-4 border-5 border-top ${activeButton === '/login' ? 'border-primary' : 'border-secondary'}`}>
       <ToastContainer />
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center align-items-center text-center">
         <Link style={{width:'300px'}}
           to="/login" 
-          className={`btn m-2 ps-5 pe-5 ${activeButton === '/login' ? 'btn-primary' : 'btn-light'}`} 
+          className={`btn m-2 ps-5 pe-5 d-flex justify-content-center align-items-center text-center ${activeButton === '/login' ? 'btn-primary' : 'btn-light'}`} 
           role="button"
           onClick={() => handleButtonClick('/login')}
         >
-          Login
+          <b >Login</b> 
         </Link>
         
         <Link style={{width:'300px'}}
           to="/register" 
-          className={`btn m-2 ps-5 pe-5 ${activeButton === '/register' ? 'btn-secondary' : 'btn-light'}`} 
+          className={`btn m-2 ps-5 pe-5 d-flex justify-content-center align-items-center text-center ${activeButton === '/register' ? 'btn-secondary' : 'btn-light'}`} 
           role="button"
           onClick={() => handleButtonClick('/register')}
         >
-          Register
+          <b >Register</b>
         </Link>
       </div>
     </div>

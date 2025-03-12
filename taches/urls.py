@@ -11,5 +11,7 @@ urlpatterns = [
     path('sprints-search/', views.search_sprints, name='sprints-search'),
     path('<int:pk>/', views.ProjectDetailView.as_view(), name='project-detail'),
     path('projects/<int:project_id>/taches/', views.taches_list, name='taches_list'),
-    
+    path('assign_task/<int:task_id>/', views.assign_task, name='assign_task'),
+    path('add_comment/<int:task_id>/', views.add_comment, name='add_comment'),
+    path('assigned_taches/', views.assigned_taches, name='assigned_taches'),
 ]
